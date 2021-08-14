@@ -16,7 +16,7 @@ import threading
 import imutils
 import time
 
-stream = cv2.VideoCapture("gallery/video.mp4")
+stream = cv2.VideoCapture("video/match.mp4")
 flag = True
 
 
@@ -41,7 +41,7 @@ def play(speed):
 def pending(decision):
 
     # 1.Display decision pending image
-    frame = cv2.cvtColor(cv2.imread("gallery/pending.png"), cv2.COLOR_BGR2RGB)
+    frame = cv2.cvtColor(cv2.imread("images/pending.png"), cv2.COLOR_BGR2RGB)
     frame = imutils.resize(frame, width=SET_WIDTH, height=SET_HEIGHT)
     frame = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
     canvas.image = frame
@@ -51,7 +51,7 @@ def pending(decision):
     time.sleep(2)
 
     # 3.Display sponsor image
-    frame = cv2.cvtColor(cv2.imread("gallery/sponsor.png"), cv2.COLOR_BGR2RGB)
+    frame = cv2.cvtColor(cv2.imread("images/sponsor.png"), cv2.COLOR_BGR2RGB)
     frame = imutils.resize(frame, width=SET_WIDTH, height=SET_HEIGHT)
     frame = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
     canvas.image = frame
@@ -62,9 +62,9 @@ def pending(decision):
 
     # 5.Display Out/NotOut image
     if decision == 'out':
-        decisionImg = "gallery/out.png"
+        decisionImg = "images/out.png"
     else:
-        decisionImg = "gallery/not_out.png"
+        decisionImg = "images/not_out.png"
     frame = cv2.cvtColor(cv2.imread(decisionImg), cv2.COLOR_BGR2RGB)
     frame = imutils.resize(frame, width=SET_WIDTH, height=SET_HEIGHT)
     frame = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
@@ -93,7 +93,7 @@ SET_HEIGHT = 400
 # Tkinter GUI starts here
 window = tkinter.Tk()
 window.title("Sarfaraz's Decision Review Kit")
-cv_img = cv2.cvtColor(cv2.imread("gallery/welcome.png"), cv2.COLOR_BGR2RGB)
+cv_img = cv2.cvtColor(cv2.imread("images/welcome.png"), cv2.COLOR_BGR2RGB)
 canvas = tkinter.Canvas(window, width=SET_WIDTH, height=SET_HEIGHT)
 photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(cv_img))
 image_on_canvas = canvas.create_image(0, 0, anchor=tkinter.NW, image=photo)
