@@ -24,8 +24,9 @@ def play(speed):
     canvas.image = frame
     canvas.create_image(0, 0, anchor=tkinter.NW, image=frame)
     if flag:
-        canvas.create_text(134, 26, fill="red",
-                           font="Times 26 bold", text="Decision Pending")
+        canvas.create_text(
+            134, 26, fill="red", font="Times 26 bold", text="Decision Pending"
+        )
     flag = not flag
 
 
@@ -52,7 +53,7 @@ def pending(decision):
     time.sleep(2)
 
     # 5.Display Out / NotOut image
-    if decision == 'out':
+    if decision == "out":
         decisionImg = "images/out.png"
     else:
         decisionImg = "images/not_out.png"
@@ -92,20 +93,22 @@ canvas.pack()
 
 
 # Buttons to control playback
-btn = tkinter.Button(window, text="<< Previous (fast)",
-                     width=50, command=partial(play, -25))
+btn = tkinter.Button(
+    window, text="<< Previous (fast)", width=50, command=partial(play, -25)
+)
 btn.pack()
 
-btn = tkinter.Button(window, text="<< Previous (slow)",
-                     width=50, command=partial(play, -2))
+btn = tkinter.Button(
+    window, text="<< Previous (slow)", width=50, command=partial(play, -2)
+)
 btn.pack()
 
-btn = tkinter.Button(window, text="Next (slow) >>",
-                     width=50, command=partial(play, 2))
+btn = tkinter.Button(window, text="Next (slow) >>", width=50, command=partial(play, 2))
 btn.pack()
 
-btn = tkinter.Button(window, text="Next (fast) >>",
-                     width=50, command=partial(play, +25))
+btn = tkinter.Button(
+    window, text="Next (fast) >>", width=50, command=partial(play, +25)
+)
 btn.pack()
 
 btn = tkinter.Button(window, text="Give Out", width=50, command=out)
