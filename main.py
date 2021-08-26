@@ -1,12 +1,3 @@
-'''
-Author  : Sarfaraz
-Date    : 17/05/2021
-Purpose : Third Project
-pip install opencv-python
-pip install pillow
-pip install imutils
-'''
-
 import tkinter
 import cv2
 import PIL.Image
@@ -60,7 +51,7 @@ def pending(decision):
     # 4.Wait for 2 second
     time.sleep(2)
 
-    # 5.Display Out/NotOut image
+    # 5.Display Out / NotOut image
     if decision == 'out':
         decisionImg = "images/out.png"
     else:
