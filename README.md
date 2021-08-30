@@ -1,4 +1,4 @@
-# Decision Review System - GUI using Tkinter
+# Decision Review System - GUI using Tkinter [![CodeFactor](https://www.codefactor.io/repository/github/googoldkhan/decision-review-system/badge)](https://www.codefactor.io/repository/github/googoldkhan/decision-review-system)
 
 -  Cricket Third Umpire DRS developed using Tkinter module of python
 
